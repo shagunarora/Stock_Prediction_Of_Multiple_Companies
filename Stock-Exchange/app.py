@@ -28,6 +28,8 @@ def collect_data(company):
 def predict_stock(company,days):
     X_input = collect_data(company)
     y_pred = scaler.inverse_transform(regressor.predict(X_input))
+    #call predict function days number of time to get output for required days
+    #Also simoultaneously update the X_input array
     return y_pred
 
 
